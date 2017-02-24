@@ -1,17 +1,26 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-using Newtonsoft.Json;
 using SimpleCSharpApi.Models.Request;
+using SimpleCSharpApi.Models.Response;
+using SimpleCSharpApi.Services;
 
 namespace SimpleCSharpApi.Controllers
 {
     [Route("api/tvshow")]
     public class TvShowController : ApiController
     {
-        [HttpPost]
-        public IHttpActionResult Post(PayloadRequest<TvShowRequest> payload)
+        private readonly ITvShowService tvShowService;
+
+        public TvShowController()
         {
-            return Ok();
+            tvShowService = new TvShowService();
+        }
+
+        [HttpPost]
+        public IHttpActionResult Post(PayloadRequest<TvShowRequest> payloadRequest)
+        {
+            var response = tvShowService.GetFilterTvShows(payloadRequest.Payload);
+            return Ok(new ApiResponse<List<TvShowResponse>>(response));
         }
     }
 }
