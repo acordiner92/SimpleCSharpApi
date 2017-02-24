@@ -96,6 +96,7 @@
     <Compile Include="Models\Request\ApiRequest.cs" />
     <Compile Include="Models\Request\TvShowRequest.cs" />
     <Compile Include="Models\Response\ApiResponse.cs" />
+    <Compile Include="Models\Response\ErrorResponse.cs" />
     <Compile Include="Models\Response\TvShowResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ITvShowService.cs" />

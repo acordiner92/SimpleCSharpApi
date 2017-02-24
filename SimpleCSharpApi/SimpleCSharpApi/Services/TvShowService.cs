@@ -10,6 +10,7 @@ namespace SimpleCSharpApi.Services
     {
         public List<TvShowResponse> GetFilterTvShows(List<TvShowRequest> tvShowRequests)
         {
+            if (tvShowRequests == null) return new List<TvShowResponse>();
             var tvShows = tvShowRequests.Select(x => new TvShow(x)).ToList();
             return tvShows.Where(x => x.AtLeastOneEp() && x.Drm).Select(x => new TvShowResponse(x)).ToList();
         } 
