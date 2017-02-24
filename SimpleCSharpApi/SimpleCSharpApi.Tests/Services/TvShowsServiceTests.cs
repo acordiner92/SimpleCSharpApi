@@ -106,5 +106,31 @@ namespace SimpleCSharpApi.Tests.Services
             // Assert
             Assert.That(tvShowResp.Count, Is.EqualTo(0));
         }
+
+        /// <summary>
+        ///     This test checks to see if a TvShowRequesst with no image information is passed in
+        /// then the TvShowResponse image info should be an empty string
+        /// </summary>
+        [Test]
+        public void Check_It_Returns_Empty_image_If_Request_has_no_image_info()
+        {
+            // Setup
+
+            var noImageInfoRequest = new TvShowRequest
+            {
+                Drm = true,
+                EpisodeCount = 3,
+                Title = "show 1",
+            };
+
+            var tvShowService = new TvShowService();
+
+            // Action
+            var tvShowResp = tvShowService.GetFilterTvShows(new List<TvShowRequest> { noImageInfoRequest });
+
+            // Assert
+            Assert.That(tvShowResp.Count, Is.EqualTo(1));
+            Assert.That(tvShowResp.First().Image, Is.EqualTo(string.Empty));
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace SimpleCSharpApi.Models.Model
         {
             Drm = r.Drm;
             EpisodeCount = r.EpisodeCount;
-            Image = r.ImageRequest.ShowImage;
+            Image = r.ImageRequest != null ? r.ImageRequest.ShowImage : string.Empty;
             Slug = r.Slug;
             Title = r.Title;
         }
