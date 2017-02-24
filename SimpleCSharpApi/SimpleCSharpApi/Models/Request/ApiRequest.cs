@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace SimpleCSharpApi.Models.Request
 {
-    public class PayloadRequest<T>
+    public class ApiRequest<T>
     {
         [JsonProperty("payload")]
         public List<T> Payload { get; set; } 

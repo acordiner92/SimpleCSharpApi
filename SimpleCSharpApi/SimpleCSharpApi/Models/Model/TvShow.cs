@@ -9,7 +9,7 @@ namespace SimpleCSharpApi.Models.Model
         {
             Drm = r.Drm;
             EpisodeCount = r.EpisodeCount;
-            Image = new Image(r.ImageRequest);
+            Image = r.ImageRequest.ShowImage;
             Slug = r.Slug;
             Title = r.Title;
         }
@@ -21,7 +21,7 @@ namespace SimpleCSharpApi.Models.Model
         public int EpisodeCount { get; set; }
 
         [JsonProperty("image")]
-        public Image Image { get; set; }
+        public string Image { get; set; }
 
         [JsonProperty("slug")]
         public string Slug { get; set; }

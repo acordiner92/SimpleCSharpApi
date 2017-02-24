@@ -6,7 +6,7 @@ using SimpleCSharpApi.Services;
 
 namespace SimpleCSharpApi.Controllers
 {
-    [Route("/")]
+    [Route("api/tv-shows")]
     public class TvShowController : ApiController
     {
         private readonly ITvShowService tvShowService;
@@ -17,9 +17,9 @@ namespace SimpleCSharpApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Post(PayloadRequest<TvShowRequest> payloadRequest)
+        public IHttpActionResult Post(ApiRequest<TvShowRequest> apiRequest)
         {
-            var response = tvShowService.GetFilterTvShows(payloadRequest.Payload);
+            var response = tvShowService.GetFilterTvShows(apiRequest.Payload);
             return Ok(new ApiResponse<List<TvShowResponse>>(response));
         }
     }

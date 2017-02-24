@@ -91,10 +91,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model\Image.cs" />
     <Compile Include="Models\Model\TvShow.cs" />
     <Compile Include="Models\Request\ImageRequest.cs" />
-    <Compile Include="Models\Request\PayloadRequest.cs" />
+    <Compile Include="Models\Request\ApiRequest.cs" />
     <Compile Include="Models\Request\TvShowRequest.cs" />
     <Compile Include="Models\Response\ApiResponse.cs" />
     <Compile Include="Models\Response\TvShowResponse.cs" />

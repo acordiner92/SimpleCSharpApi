@@ -7,7 +7,7 @@ namespace SimpleCSharpApi.Models.Response
     {
         public TvShowResponse(TvShow s)
         {
-            Image = s.Image.ShowImage;
+            Image = s.Image;
             Slug = s.Slug;
             Title = s.Title;
         }
