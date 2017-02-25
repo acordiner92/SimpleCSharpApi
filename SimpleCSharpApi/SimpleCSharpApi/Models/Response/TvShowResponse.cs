@@ -3,6 +3,9 @@ using SimpleCSharpApi.Models.Model;
 
 namespace SimpleCSharpApi.Models.Response
 {
+    /// <summary>
+    ///     The api response model for the TvShow Model
+    /// </summary>
     public class TvShowResponse
     {
         public TvShowResponse(TvShow s)
@@ -17,8 +20,8 @@ namespace SimpleCSharpApi.Models.Response
 
         [JsonProperty("slug")]
         public string Slug { get; set; }
-        
+
         [JsonProperty("title")]
-        public string Title { get; set; } 
+        public string Title { get; set; }
     }
 }

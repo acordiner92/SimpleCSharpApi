@@ -23,14 +23,13 @@ namespace SimpleCSharpApi.Tests.Services
                     Drm = true,
                     EpisodeCount = 3,
                     Title = "cool show",
-                    ImageRequest = new ImageRequest()
                 }
             };
 
             var tvShowService = new TvShowService();
 
             // Action
-            var tvShowResp = tvShowService.GetFilterTvShows(validRequest);
+            var tvShowResp = tvShowService.GetFilteredTvShows(validRequest);
 
             // Assert
             Assert.That(tvShowResp.Count, Is.EqualTo(1));
@@ -63,7 +62,7 @@ namespace SimpleCSharpApi.Tests.Services
             var tvShowService = new TvShowService();
 
             // Action
-            var tvShowResp = tvShowService.GetFilterTvShows(validRequest);
+            var tvShowResp = tvShowService.GetFilteredTvShows(validRequest);
 
             // Assert
             Assert.That(tvShowResp.Count, Is.EqualTo(1));
@@ -84,58 +83,28 @@ namespace SimpleCSharpApi.Tests.Services
             var noDrmRequest = new TvShowRequest
             {
                 Drm = false,
-                EpisodeCount = 3,
-                Title = "show 1",
-                ImageRequest = new ImageRequest()
+                EpisodeCount = 3
             };
 
             var zeroEpisodeCountRequest =
                 new TvShowRequest
                 {
                     Drm = true,
-                    EpisodeCount = 0,
-                    Title = "show 2",
-                    ImageRequest = new ImageRequest()
+                    EpisodeCount = 0
                 };
 
             var tvShowService = new TvShowService();
 
             // Action
-            var tvShowResp = tvShowService.GetFilterTvShows(new List<TvShowRequest> {noDrmRequest, zeroEpisodeCountRequest});
+            var tvShowResp = tvShowService.GetFilteredTvShows(new List<TvShowRequest> {noDrmRequest, zeroEpisodeCountRequest});
 
             // Assert
             Assert.That(tvShowResp.Count, Is.EqualTo(0));
         }
 
         /// <summary>
-        ///     This test checks to see if a TvShowRequest with no image information is passed in
-        /// then the TvShowResponse image info should be an empty string
-        /// </summary>
-        [Test]
-        public void Check_It_Returns_Empty_image_If_Request_has_no_image_info()
-        {
-            // Setup
-
-            var noImageInfoRequest = new TvShowRequest
-            {
-                Drm = true,
-                EpisodeCount = 3,
-                Title = "show 1",
-            };
-
-            var tvShowService = new TvShowService();
-
-            // Action
-            var tvShowResp = tvShowService.GetFilterTvShows(new List<TvShowRequest> { noImageInfoRequest });
-
-            // Assert
-            Assert.That(tvShowResp.Count, Is.EqualTo(1));
-            Assert.That(tvShowResp.First().Image, Is.EqualTo(string.Empty));
-        }
-
-        /// <summary>
         ///     This test checks to see if a TvShowRequest is null then an empty response list
-        ///  is returned
+        ///     is returned
         /// </summary>
         [Test]
         public void Check_It_Returns_Empty_Response_List_If_Request_Is_Null()
@@ -144,7 +113,7 @@ namespace SimpleCSharpApi.Tests.Services
             var tvShowService = new TvShowService();
 
             // Action
-            var tvShowResp = tvShowService.GetFilterTvShows(null);
+            var tvShowResp = tvShowService.GetFilteredTvShows(null);
 
             // Assert
             Assert.That(tvShowResp.Count, Is.EqualTo(0));

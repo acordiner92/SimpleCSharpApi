@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace SimpleCSharpApi.Models.Response
 {
     public class ApiResponse<T>
     {
-        public ApiResponse(T response)
+        public ApiResponse(List<T> response)
         {
             Response = response;
         }
 
         [JsonProperty("response")]
-        public T Response { get; set; }
+        public List<T> Response { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using System.Web.Http;
 using SimpleCSharpApi.Models.Request;
 using SimpleCSharpApi.Models.Response;
@@ -11,6 +10,11 @@ namespace SimpleCSharpApi.Controllers
     public class TvShowController : ApiController
     {
         private readonly ITvShowService tvShowService;
+
+        public TvShowController(ITvShowService tvShowService)
+        {
+            this.tvShowService = tvShowService;
+        }
 
         public TvShowController()
         {
@@ -24,8 +28,8 @@ namespace SimpleCSharpApi.Controllers
             {
                 return Content(HttpStatusCode.BadRequest, new ErrorResponse("Could not decode request: JSON parsing failed"));
             }
-            var response = tvShowService.GetFilterTvShows(apiRequest.Payload);
-            return Ok(new ApiResponse<List<TvShowResponse>>(response));
+            var response = tvShowService.GetFilteredTvShows(apiRequest.Payload);
+            return Ok(new ApiResponse<TvShowResponse>(response));
         }
     }
 }

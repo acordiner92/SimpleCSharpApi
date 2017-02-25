@@ -8,11 +8,11 @@ namespace SimpleCSharpApi.Services
 {
     public class TvShowService : ITvShowService
     {
-        public List<TvShowResponse> GetFilterTvShows(List<TvShowRequest> tvShowRequests)
+        public List<TvShowResponse> GetFilteredTvShows(List<TvShowRequest> tvShowRequests)
         {
             if (tvShowRequests == null) return new List<TvShowResponse>();
             var tvShows = tvShowRequests.Select(x => new TvShow(x)).ToList();
             return tvShows.Where(x => x.AtLeastOneEp() && x.Drm).Select(x => new TvShowResponse(x)).ToList();
-        } 
+        }
     }
 }

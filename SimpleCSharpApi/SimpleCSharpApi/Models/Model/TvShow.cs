@@ -1,8 +1,10 @@
-﻿using Newtonsoft.Json;
-using SimpleCSharpApi.Models.Request;
+﻿using SimpleCSharpApi.Models.Request;
 
 namespace SimpleCSharpApi.Models.Model
 {
+    /// <summary>
+    /// Tv Show Class and logic
+    /// </summary>
     public class TvShow
     {
         public TvShow(TvShowRequest r)
@@ -14,19 +16,14 @@ namespace SimpleCSharpApi.Models.Model
             Title = r.Title;
         }
 
-        [JsonProperty("drm")]
         public bool Drm { get; set; }
 
-        [JsonProperty("episodeCount")]
         public int EpisodeCount { get; set; }
 
-        [JsonProperty("image")]
         public string Image { get; set; }
 
-        [JsonProperty("slug")]
         public string Slug { get; set; }
 
-        [JsonProperty("title")]
         public string Title { get; set; }
 
         public bool AtLeastOneEp()

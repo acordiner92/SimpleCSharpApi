@@ -6,6 +6,10 @@ namespace SimpleCSharpApi
 {
     public static class WebApiConfig
     {
+        /// <summary>
+        /// Sets up the configuration for the API
+        /// </summary>
+        /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
