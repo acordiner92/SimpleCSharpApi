@@ -7,7 +7,7 @@ using SimpleCSharpApi.Services;
 
 namespace SimpleCSharpApi.Controllers
 {
-    [Route("api/tv-shows")]
+    [Route("")]
     public class TvShowController : ApiController
     {
         private readonly ITvShowService tvShowService;
