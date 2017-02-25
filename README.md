@@ -1,12 +1,12 @@
 # SimpleCSharpApi
 
-This is a basic api that takes in a JSON request, filters the data based on some requirements and returns a JSON response
+This is a basic api that takes in a JSON request, filters the data based on some requirements and returns a JSON response.
 
 
 ## How to use
-Go to root path of your where this API is hosted e.g myservice.somedomain.com/ 
+Go to root path of your where SimpleCSharpApi is hosted e.g myservice.somedomain.com/ 
 
-Post a JSON request like so to that root address
+Post a JSON request like below to the root address.
 ```json
 {  
    "payload":[  
@@ -53,4 +53,4 @@ Expected filtered response:
 ```
 
 ## How to Test
-To Test this you need to open the SimpleCSharpApi.Tests project and in Visual Studio go to Test > Windows > Test Explorer and then Run All tests. If the tests are not showing please install NUnit 3 Test Adapter in the Extensions and Updates of Visual Studio.
+To test this you need to open the SimpleCSharpApi.Tests project and in Visual Studio go to Test > Windows > Test Explorer and then Run All Tests. If the tests are not showing please install NUnit 3 Test Adapter in the Extensions and Updates of Visual Studio.
