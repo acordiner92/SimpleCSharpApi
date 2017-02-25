@@ -6,6 +6,9 @@ using SimpleCSharpApi.Services;
 
 namespace SimpleCSharpApi.Controllers
 {
+    /// <summary>
+    /// Handles Post option for TvShow Resource
+    /// </summary>
     [Route("")]
     public class TvShowController : ApiController
     {
