@@ -10,7 +10,7 @@ namespace SimpleCSharpApi.Services
     public interface ITvShowService
     {
         /// <summary>
-        ///     Filters the tv shows based on if there is more than on episode
+        ///     Filters the tv shows based on if there is more than one episode
         ///     and whether the drm is enabled
         /// </summary>
         /// <param name="tvShowRequests"></param>

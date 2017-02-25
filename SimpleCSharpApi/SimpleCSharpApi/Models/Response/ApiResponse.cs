@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace SimpleCSharpApi.Models.Response
 {
+    /// <summary>
+    ///    Base Response Object for Api Responses
+    /// </summary>
     public class ApiResponse<T>
     {
         public ApiResponse(List<T> response)

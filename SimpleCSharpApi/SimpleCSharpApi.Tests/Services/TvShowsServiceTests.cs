@@ -13,7 +13,7 @@ namespace SimpleCSharpApi.Tests.Services
         ///     critea is passed in, it will return a response object
         /// </summary>
         [Test]
-        public void Check_It_Correctly_Returns_Drm_Enabled_And_More_Than_One_Eposide()
+        public void Check_It_Correctly_Returns_If_Request_Is_Drm_Enabled_And_More_Than_One_Eposide()
         {
             // Setup
             var validRequest = new List<TvShowRequest>
@@ -41,7 +41,7 @@ namespace SimpleCSharpApi.Tests.Services
         ///     information taken from a valid TvShowRequest
         /// </summary>
         [Test]
-        public void Check_Reponse_Contains_Correct_Info_From_Request()
+        public void Check_Response_Contains_Correct_Info_From_Request()
         {
             // Setup
             var validRequest = new List<TvShowRequest>
@@ -103,7 +103,7 @@ namespace SimpleCSharpApi.Tests.Services
         }
 
         /// <summary>
-        ///     This test checks to see if a TvShowRequest is null then an empty response list
+        ///     This test checks to see if a TvShowRequest is null then an empty TvShowResponse list
         ///     is returned
         /// </summary>
         [Test]

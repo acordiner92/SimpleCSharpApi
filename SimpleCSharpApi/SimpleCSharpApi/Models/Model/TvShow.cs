@@ -3,7 +3,7 @@
 namespace SimpleCSharpApi.Models.Model
 {
     /// <summary>
-    /// Tv Show Class and logic
+    ///     Tv Show Model and logic
     /// </summary>
     public class TvShow
     {
@@ -17,13 +17,9 @@ namespace SimpleCSharpApi.Models.Model
         }
 
         public bool Drm { get; set; }
-
         public int EpisodeCount { get; set; }
-
         public string Image { get; set; }
-
         public string Slug { get; set; }
-
         public string Title { get; set; }
 
         public bool AtLeastOneEp()
